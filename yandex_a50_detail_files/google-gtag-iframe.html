@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!-- saved from url=(0285)https://yastatic.net/market-export/_/h/market-gtag/google-gtag-iframe.html?account=%22AW-816923435%22&events=%5B%7B%22eventType%22%3A%22conversion%22%2C%22eventData%22%3A%7B%22send_to%22%3A%22AW-816923435%2FrQc-CLyvxtYBEKuGxYUD%22%2C%22page_id%22%3A%22market%3Aproduct-spec%22%7D%7D%5D -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="robots" content="noindex, nofollow">
+<script type="text/javascript" async="" src="./f.txt"></script><script type="text/javascript" async="" src="./js"></script><script async="" src="./js(1)"></script><script src="./f(1).txt"></script><meta http-equiv="origin-trial" content="A5OJkPEoICe/luEx3lEfB03JrHAKQQ4T0hNXu0wsfMydHldQnwm3jaJ0E5KeQgFnhJJ64/Ayh1elZwM+QwHXmQ8AAACfeyJvcmlnaW4iOiJodHRwczovL3d3dy5nb29nbGVhZHNlcnZpY2VzLmNvbTo0NDMiLCJmZWF0dXJlIjoiQ29udmVyc2lvbk1lYXN1cmVtZW50IiwiZXhwaXJ5IjoxNjMxNjYzOTk5LCJpc1N1YmRvbWFpbiI6dHJ1ZSwiaXNUaGlyZFBhcnR5Ijp0cnVlLCJ1c2FnZSI6InN1YnNldCJ9"><script src="./f(2).txt"></script></head>
+<body data-new-gr-c-s-check-loaded="14.1026.0" data-gr-ext-installed="">
+<script>
+    var validR = /market(.*)\.yandex/g;
+
+    function getAccountId() {
+        var params = getQueryParameters();
+
+        return params.account;
+    }
+
+    function getQueryParameters() {
+        var parameters = {};
+        var __GET = window.location.search.substring(1)
+        .split('&');
+
+        for (var i = 0, I = __GET.length; i < I; ++i) {
+            var getVar = __GET[i].split('=');
+
+            var key = getVar[0];
+
+            if (!key) {
+                continue;
+            }
+
+            try {
+                parameters[key] = typeof (getVar[1]) == 'undefined' ?
+                    '' :
+                    JSON.parse(decodeURIComponent(getVar[1]));
+            } catch (e) {}
+        }
+
+        return parameters;
+    }
+
+    (function (w, d, u) {
+        var googleAccountId = getAccountId();
+        var head = d.getElementsByTagName('head')[0];
+
+        if (googleAccountId && head) {
+            var script = d.createElement('script');
+            script.async = 1;
+            script.src = u + '?id=' + googleAccountId;
+            head.appendChild(script);
+        }
+    })(window, document, 'https://www.googletagmanager.com/gtag/js');
+
+
+    (function (window) {
+        function isArray(arg) {
+            return Object.prototype.toString.call(arg) === '[object Array]';
+        }
+
+        function gtag() {
+            var dataLayer = window.dataLayer || (window.dataLayer = []); // Safely instantiate dataLayer locally
+            dataLayer.push(arguments);
+        }
+
+        function sendEvent(event) {
+            if (event && event['eventType'] && event['eventData']) {
+                gtag('js', new Date());
+                gtag(
+                    'event',
+                    event['eventType'],
+                    event['eventData']
+                );
+            }
+        }
+
+        function sendEvents(events) {
+            if (isArray(events)) {
+                for (var i = 0, I = events.length; i < I; i++) {
+                    sendEvent(events[i]);
+                }
+            }
+        }
+
+        function listenMessages(window) {
+            window.addEventListener('message', function (message) {
+                var isValidMessageOrigin = validR.test(message.origin);
+
+                if (!isValidMessageOrigin) {
+                    return;
+                }
+
+                var data = message.data;
+                var gtagEvents;
+
+                switch (typeof data) {
+                    case 'string':
+                        try {
+                            gtagEvents = JSON.parse(data);
+                        } catch (e) {
+                            return;
+                        }
+                        break;
+                    case 'object':
+                        gtagEvents = data;
+                        break;
+                    default:
+                        return;
+                }
+
+                if (!isArray(gtagEvents)) {
+                    gtagEvents = [gtagEvents];
+                }
+
+                sendEvents(gtagEvents);
+            });
+        }
+
+        const accountId = getAccountId();
+        gtag('config', accountId);
+        gtag('set', 'send_to', [accountId]);
+
+        var parameters = getQueryParameters();
+
+        if (parameters && parameters['event']) {
+            sendEvent(parameters['event']);
+        }
+
+        if (parameters && parameters['events']) {
+            sendEvents(parameters['events']);
+        }
+
+        listenMessages(window);
+    })(window);
+</script>
+<!-- End Google Tag Manager -->
+
+
+</body><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration></html>
